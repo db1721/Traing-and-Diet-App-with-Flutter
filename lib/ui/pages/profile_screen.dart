@@ -72,7 +72,8 @@ class ProfileScreen extends StatelessWidget {
               ),
               child: Container(
                 color: Colors.white,
-                padding: const EdgeInsets.only(top: 40, left: 32, right: 16, bottom: 10),
+                padding: const EdgeInsets.only(
+                    top: 40, left: 32, right: 16, bottom: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
@@ -165,7 +166,10 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     child: Text(
                       "MEALS FOR TODAY",
-                      style: const TextStyle(color: Colors.blueGrey, fontSize: 16, fontWeight: FontWeight.w700),
+                      style: const TextStyle(
+                          color: Colors.blueGrey,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700),
                     ),
                   ),
                   Expanded(
@@ -200,9 +204,11 @@ class ProfileScreen extends StatelessWidget {
                         return GestureDetector(
                           onTap: openContainer,
                           child: Container(
-                            margin: const EdgeInsets.only(bottom: 10, left: 32, right: 32),
+                            margin: const EdgeInsets.only(
+                                bottom: 10, left: 32, right: 32),
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(30)),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(30)),
                               gradient: LinearGradient(
                                 begin: Alignment.topCenter,
                                 end: Alignment.bottomCenter,
@@ -219,7 +225,8 @@ class ProfileScreen extends StatelessWidget {
                                   width: 20,
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 16.0, left: 16),
+                                  padding: const EdgeInsets.only(
+                                      top: 16.0, left: 16),
                                   child: Text(
                                     "YOUR NEXT WORKOUT",
                                     style: TextStyle(
@@ -230,7 +237,8 @@ class ProfileScreen extends StatelessWidget {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 4.0, left: 16),
+                                  padding:
+                                      const EdgeInsets.only(top: 4.0, left: 16),
                                   child: Text(
                                     "Upper Body",
                                     style: TextStyle(
@@ -248,7 +256,8 @@ class ProfileScreen extends StatelessWidget {
                                       ),
                                       Container(
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.all(Radius.circular(25)),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(25)),
                                           color: const Color(0xFF5B4D9D),
                                         ),
                                         padding: const EdgeInsets.all(10),
@@ -264,7 +273,8 @@ class ProfileScreen extends StatelessWidget {
                                       ),
                                       Container(
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.all(Radius.circular(25)),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(25)),
                                           color: const Color(0xFF5B4D9D),
                                         ),
                                         padding: const EdgeInsets.all(10),
@@ -280,7 +290,8 @@ class ProfileScreen extends StatelessWidget {
                                       ),
                                       Container(
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.all(Radius.circular(25)),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(25)),
                                           color: const Color(0xFF5B4D9D),
                                         ),
                                         padding: const EdgeInsets.all(10),
@@ -320,7 +331,14 @@ class _IngredientProgress extends StatelessWidget {
   final double progress, width;
   final Color progressColor;
 
-  const _IngredientProgress({Key key, this.ingredient, this.leftAmount, this.progress, this.progressColor, this.width}) : super(key: key);
+  const _IngredientProgress(
+      {Key key,
+      this.ingredient,
+      this.leftAmount,
+      this.progress,
+      this.progressColor,
+      this.width})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -372,7 +390,8 @@ class _IngredientProgress extends StatelessWidget {
 class _RadialProgress extends StatelessWidget {
   final double height, width, progress;
 
-  const _RadialProgress({Key key, this.height, this.width, this.progress}) : super(key: key);
+  const _RadialProgress({Key key, this.height, this.width, this.progress})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -467,7 +486,8 @@ class _MealCard extends StatelessWidget {
             Flexible(
               fit: FlexFit.tight,
               child: OpenContainer(
-                closedShape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+                closedShape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
                 transitionDuration: const Duration(milliseconds: 1000),
                 openBuilder: (context, _) {
                   return MealDetailScreen(
@@ -492,7 +512,7 @@ class _MealCard extends StatelessWidget {
             Flexible(
               fit: FlexFit.tight,
               child: Padding(
-                padding: const EdgeInsets.only(left: 12.0),
+                padding: const EdgeInsets.only(left: 8.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
