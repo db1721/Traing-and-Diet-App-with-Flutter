@@ -28,7 +28,7 @@ class ProfileScreen extends StatelessWidget {
           items: [
             BottomNavigationBarItem(
               icon: Padding(
-                padding: const EdgeInsets.only(top: 8.0),
+                padding: const EdgeInsets.only(top: 1.0),
                 child: Icon(Icons.home),
               ),
               title: Text(
@@ -39,7 +39,7 @@ class ProfileScreen extends StatelessWidget {
             BottomNavigationBarItem(
               icon: Padding(
                 child: Icon(Icons.search),
-                padding: const EdgeInsets.only(top: 8.0),
+                padding: const EdgeInsets.only(top: 1.0),
               ),
               title: Text(
                 "Search",
@@ -49,7 +49,7 @@ class ProfileScreen extends StatelessWidget {
             BottomNavigationBarItem(
               icon: Padding(
                 child: Icon(Icons.person),
-                padding: const EdgeInsets.only(top: 8.0),
+                padding: const EdgeInsets.only(top: 1.0),
               ),
               title: Text(
                 "Profile",
@@ -73,7 +73,7 @@ class ProfileScreen extends StatelessWidget {
               child: Container(
                 color: Colors.white,
                 padding: const EdgeInsets.only(
-                    top: 40, left: 32, right: 16, bottom: 10),
+                    top: 25, left: 32, right: 16, bottom: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
@@ -82,7 +82,7 @@ class ProfileScreen extends StatelessWidget {
                         "${DateFormat("EEEE").format(today)}, ${DateFormat("d MMMM").format(today)}",
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
-                          fontSize: 18,
+                          fontSize: 16,
                         ),
                       ),
                       subtitle: Text(
@@ -102,14 +102,14 @@ class ProfileScreen extends StatelessWidget {
                       children: <Widget>[
                         _RadialProgress(
                           width: width * 0.4,
-                          height: width * 0.4,
+                          height: width * 0.325,
                           progress: 0.7,
                         ),
                         SizedBox(
                           width: 10,
                         ),
                         Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
@@ -161,7 +161,7 @@ class ProfileScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(
                       bottom: 8,
-                      left: 32,
+                      left: 12,
                       right: 16,
                     ),
                     child: Text(
@@ -178,7 +178,7 @@ class ProfileScreen extends StatelessWidget {
                       child: Row(
                         children: <Widget>[
                           SizedBox(
-                            width: 32,
+                            width: 5,
                           ),
                           for (int i = 0; i < meals.length; i++)
                             _MealCard(
@@ -205,7 +205,7 @@ class ProfileScreen extends StatelessWidget {
                           onTap: openContainer,
                           child: Container(
                             margin: const EdgeInsets.only(
-                                bottom: 10, left: 32, right: 32),
+                                bottom: 1, left: 2, right: 32),
                             decoration: BoxDecoration(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(30)),
@@ -473,12 +473,12 @@ class _MealCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(
-        right: 20,
+        right: 10,
         bottom: 10,
       ),
       child: Material(
         borderRadius: BorderRadius.all(Radius.circular(20)),
-        elevation: 4,
+        elevation: 8,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
@@ -487,7 +487,7 @@ class _MealCard extends StatelessWidget {
               fit: FlexFit.tight,
               child: OpenContainer(
                 closedShape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                    borderRadius: BorderRadius.all(Radius.circular(15))),
                 transitionDuration: const Duration(milliseconds: 1000),
                 openBuilder: (context, _) {
                   return MealDetailScreen(
@@ -501,7 +501,7 @@ class _MealCard extends StatelessWidget {
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       child: Image.asset(
                         meal.imagePath,
-                        width: 150,
+                        width: 120,
                         fit: BoxFit.fill,
                       ),
                     ),
